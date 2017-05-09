@@ -1,8 +1,27 @@
 <Defs>
+	<ThingDef ParentName="EggFertBase">
+		<defName>EggRoombaFertilized</defName>
+		<label>tortoise egg (fert.)</label>
+		<description>Fertilized roomba egg. If all goes well, it should hatch into a baby roomba.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Animal/Tortoise</texPath>
+			<drawSize>0.9</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>23.0</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Hatcher">
+			<hatcherDaysToHatch>0</hatcherDaysToHatch>
+			<hatcherPawn>Tortoise</hatcherPawn>
+		</li>
+		</comps>
+	</ThingDef>
+
 	<RecipeDef>
 		<defName>BuildRoomba</defName>
-		<label>build a roomba.</label>
-		<jobString>Tinkering.</jobString>
+		<label>build a roomba</label>
+		<jobString>Tinkering on a Roomba.</jobString>
 		<workSkill>Crafting</workSkill>
 		<workAmount>10</workAmount>
 		<recipeUsers>
@@ -26,7 +45,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<Tortoise>1</Tortoise>
+			<EggRoombaFertilized>1</EggRoombaFertilized>
 		</products>
 	</RecipeDef>
 </Defs>
