@@ -1,0 +1,32 @@
+<Defs>
+	<RecipeDef>
+		<defName>BuildRoomba</defName>
+		<label>build a roomba.</label>
+		<jobString>Tinkering.</jobString>
+		<workSkill>Crafting</workSkill>
+		<workAmount>10</workAmount>
+		<recipeUsers>
+			<!-- TODO: better spot -->
+			<li>CraftingSpot</li>
+		</recipeUsers>
+	    <ingredients>
+			<li>
+				<filter>
+		          <thingDefs>
+		            <li>Steel</li>
+		          </thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Tortoise>1</Tortoise>
+		</products>
+	</RecipeDef>
+</Defs>
