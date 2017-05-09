@@ -9,7 +9,7 @@
 * tremors lifecycle
 
 == ToDo: ==
-* make a craftable turtle
+* ~~make a craftable turtle~~
 * make turtle do cleaning
 * make robot turtle
 * make raw-electric food source
