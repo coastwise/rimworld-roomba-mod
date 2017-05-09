@@ -1,14 +1,14 @@
-= Roomba Mod =
+# Roomba Mod
 
-== Ideas: ==
+## Ideas:
 * footType Electric / ElecticRaw
-  see: Races_Animal_Arid foodType VegetarianRoughAnimal
+  * see: Races_Animal_Arid foodType VegetarianRoughAnimal
 * wild solar powered roomba
-  needs component to reproduce
+  * needs component to reproduce
 * screamers
 * tremors lifecycle
 
-== ToDo: ==
+## To Do:
 * ~~make a craftable turtle~~
 * make turtle do cleaning
 * make robot turtle
