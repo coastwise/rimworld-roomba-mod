@@ -1,5 +1,6 @@
 ﻿using System;
 using Verse;
+using RimWorld;
 
 namespace RoombaCode {
 	public class CompRobotWork : ThingComp
@@ -24,6 +25,13 @@ namespace RoombaCode {
 
 		public override void PostSpawnSetup () {
 			Pawn pawn = (Pawn)this.parent;
+
+			TraitDef traitDef = Robot_TraitDefOf.Vacuum;
+			int degree = 0; // not a spectrum
+			bool forced = true;
+			Trait forcedTrait = new Trait(traitDef, degree, forced);
+
+			pawn.story.traits.GainTrait(forcedTrait);
 
 			if (pawn.workSettings == null)
 			{

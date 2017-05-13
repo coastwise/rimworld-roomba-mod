@@ -1,5 +1,26 @@
 <Defs>
 
+  <TraitDef>
+    <defName>Vacuum</defName>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>vacuum</label>
+        <description>NAME is a vacuum.</description>
+      </li>
+    </degreeDatas>
+    <requiredWorkTags>
+      <li>Cleaning</li>
+    </requiredWorkTags>
+    <disabledWorkTags>
+      <li>Firefighting</li>
+      <li>Firefighting</li>
+      <li>Violent</li>
+      <li>Social</li>
+      <li>Intellectual</li>
+    </disabledWorkTags>
+  </TraitDef>
+
   <ThingDef ParentName="AnimalThingBase">
     <defName>Roomba</defName>
     <label>roomba</label>
