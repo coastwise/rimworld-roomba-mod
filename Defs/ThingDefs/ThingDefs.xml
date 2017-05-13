@@ -1,4 +1,5 @@
 <Defs>
+
   <ThingDef ParentName="AnimalThingBase">
     <defName>Roomba</defName>
     <label>roomba</label>
@@ -13,8 +14,20 @@
     <verbs>
     </verbs>
     <comps>
+      <li Class="RoombaCode.CompProperties_RobotWork">
+        <compClass>RoombaCode.CompRobotWork</compClass>
+        <validWorkTypes>
+          <li>Cleaning</li>
+          <li>Hauling</li>
+        </validWorkTypes>
+      </li>
     </comps>
     <race>
+      <thinkTreeMain>Humanlike</thinkTreeMain>
+      <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+      <intelligence>Humanlike</intelligence>
+      <hasGenders>false</hasGenders>
+      <lifeExpectancy>200</lifeExpectancy>
       <body>TurtleLike</body>
       <baseBodySize>0.5</baseBodySize>
       <baseHungerRate>0.3</baseHungerRate>
@@ -22,7 +35,6 @@
       <foodType>OmnivoreRoughAnimal</foodType>
       <leatherInsulation>0.5</leatherInsulation>
       <wildness>0.75</wildness>
-      <lifeExpectancy>180</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalAdult</def>
@@ -46,6 +58,8 @@
     <defName>Roomba</defName>
     <label>roomba</label>
     <race>Roomba</race>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <backstoryCategory>Spacer</backstoryCategory>
     <combatPower>40</combatPower>
     <wildSpawn_EcoSystemWeight>0.4</wildSpawn_EcoSystemWeight>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
