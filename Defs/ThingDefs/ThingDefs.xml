@@ -44,9 +44,9 @@
       </li>
     </comps>
     <race>
-      <thinkTreeMain>Humanlike</thinkTreeMain>
-      <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
-      <intelligence>Humanlike</intelligence>
+      <thinkTreeMain>RobotWorker</thinkTreeMain>
+      <thinkTreeConstant>RobotWorkerConstant</thinkTreeConstant>
+      <intelligence>ToolUser</intelligence>
       <hasGenders>false</hasGenders>
       <lifeExpectancy>200</lifeExpectancy>
       <body>TurtleLike</body>

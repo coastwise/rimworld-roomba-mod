@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Verse;
 using RimWorld;
 
@@ -13,18 +14,34 @@ namespace RoombaCode {
 			}
 		}
 
+		List<WorkGiver> workGiversByPriority = new List<WorkGiver>();
+
 		public override void Initialize (CompProperties props) {
 			base.Initialize(props);
 			Log.Message("CompRobotWork Initialized with WorkTypes:");
 			foreach (WorkTypeDef workType in this.Props.validWorkTypes)
 			{
 				Log.Message(workType.defName);
+
+				// TODO: does *not* do priorities yet
+				foreach (WorkGiverDef giverDef in workType.workGiversByPriority)
+				{
+					Log.Message(giverDef.defName);
+					workGiversByPriority.Add(giverDef.Worker);
+				}
+
 			}
 			Log.Message("end of work types for CompRobotWork");
 		}
 
 		public override void PostSpawnSetup () {
 			Pawn pawn = (Pawn)this.parent;
+
+			if (pawn.story == null || pawn.workSettings == null)
+			{
+				Log.Warning("CompRobotWork running on a pawn without a story or workSettings... this is probably find, old code path");
+				return;
+			}
 
 			TraitDef traitDef = Robot_TraitDefOf.Vacuum;
 			int degree = 0; // not a spectrum
@@ -48,7 +65,13 @@ namespace RoombaCode {
 			}
 
 			Log.Message("Done!");
+
 		}
 	
+		public List<WorkGiver> GetWorkGiversInOrder()
+		{
+			return workGiversByPriority;
+		}
+
 	}
 }

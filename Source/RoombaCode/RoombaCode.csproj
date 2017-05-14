@@ -44,6 +44,7 @@
     <Compile Include="CompProperties_RobotWork.cs" />
     <Compile Include="CompRobotWork.cs" />
     <Compile Include="Robot_TraitDefOf.cs" />
+    <Compile Include="JobGiver_RobotWork.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

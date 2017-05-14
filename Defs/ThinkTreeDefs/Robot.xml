@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThinkTrees>
+
+	<ThinkTreeDef>
+		<defName>RobotWorker</defName>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+      
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="RoombaCode.JobGiver_RobotWork" />
+        <li Class="JobGiver_WanderColony">
+          <maxDanger>None</maxDanger>
+        </li>
+        <li Class="JobGiver_IdleError" />
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+  
+	<ThinkTreeDef><!-- copied from HumanlikeConstant... -->
+		<defName>RobotWorkerConstant</defName>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				<li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+					<subNodes>
+				        <!-- Flee explosion -->
+				        <li Class="JobGiver_FleeExplosion" />
+				    
+				        <!-- Hostility response -->
+				        <li Class="JobGiver_ConfigurableHostilityResponse" />
+				        
+				        <!-- Lord directives -->
+				        <li Class="ThinkNode_Subtree">
+				          <treeDef>LordDutyConstant</treeDef>
+				        </li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+
+</ThinkTrees>
