@@ -37,9 +37,18 @@ namespace RoombaCode {
 		public override void PostSpawnSetup () {
 			Pawn pawn = (Pawn)this.parent;
 
+			if (pawn.Faction != Faction.OfPlayer)
+			{
+				Log.Warning("pawn is of a different faction than the player! wont get cleaning jobs!");
+				Log.Message("forcing pawn faction to " + Faction.OfPlayer.def.defName);
+				pawn.SetFactionDirect(Faction.OfPlayer);
+			}
+
+
+
 			if (pawn.story == null || pawn.workSettings == null)
 			{
-				Log.Warning("CompRobotWork running on a pawn without a story or workSettings... this is probably find, old code path");
+				Log.Warning("CompRobotWork running on a pawn without a story or workSettings... this is probably fine, old code path");
 				return;
 			}
 
